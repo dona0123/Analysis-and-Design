@@ -1,0 +1,8 @@
+#written by FileProperties
+#Sat Mar 23 15:44:46 KST 2024
+Location=Seoul
+StudendtId=20200551
+Year=2024
+bornYear=2002
+name=Pyun Dona
+width=640

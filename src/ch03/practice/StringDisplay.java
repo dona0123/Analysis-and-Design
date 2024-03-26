@@ -7,7 +7,7 @@ public class StringDisplay extends AbstractDisplay {
     // 생성자 
     public StringDisplay(String string) {
         this.string = string;
-        this.width = string.length();
+        // this.width = string.length();
         this.width = string.getBytes().length;
     }
 

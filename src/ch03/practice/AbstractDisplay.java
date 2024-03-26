@@ -1,7 +1,7 @@
 package ch03.practice;
 
 // 부모 클래스
-// public abstract class AbstractDisplay {
+// public abstract class AbstractDisplay { 
 public interface AbstractDisplay {
 
     // open, print, close는 하위 클래스에 구현을 맡기는 추상 메소드 

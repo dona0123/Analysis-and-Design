@@ -17,7 +17,7 @@ public class Main {
         // AbstractDisplay sd = new StringDisplay("덕성여대");
         x = new StringDisplay("덕성여대");
 
-        // sd.open();
+        // AbstractDisplay sd = new StringDisplay("덕성여대");
         // sd.print();
         // sd.close();
 
