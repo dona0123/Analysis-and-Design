@@ -1,5 +1,5 @@
 #written by FileProperties
-#Sat Mar 23 15:44:46 KST 2024
+#Tue Mar 26 13:12:57 KST 2024
 Location=Seoul
 StudendtId=20200551
 Year=2024
