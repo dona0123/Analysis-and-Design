@@ -11,6 +11,6 @@ public class IDCardFactory extends Factory {
 
     @Override
     protected void registerProduct(Product product) {
-        System.out.println(product + "을 등록했습니다.");
+        System.out.println(product + "을 등록했습니다.");  
     }
 }

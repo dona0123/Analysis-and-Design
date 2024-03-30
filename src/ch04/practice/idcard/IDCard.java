@@ -18,7 +18,7 @@ public class IDCard extends Product {
         System.out.println(this + "을 사용합니다.");
     }
 
-    @Override
+    @Override // Object 클래스에서 상속
     public String toString() {
         return "[IDCard:" + owner + "]";
     }
