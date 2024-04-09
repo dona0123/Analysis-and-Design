@@ -8,6 +8,6 @@ public enum Triple {
     }
 
     public static Triple getInstance(String name) {
-        return valueOf(name);
+        return valueOf(name); 
     }
 }
