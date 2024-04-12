@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Manager {
-    // Map : 키와 값 (Product 원본(prototypes)를을 모아서 관리하는 컬렉션)
+    // Map : 키와 값 (Product 원본(prototypes)들을 모아서 관리하는 컬렉션)
     private Map<String, Product> showcase = new HashMap<>();
 
     // Product : 부모 클래스 -> 부모 타입으로 코딩해라
