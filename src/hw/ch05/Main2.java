@@ -12,6 +12,7 @@ public class Main2 extends Thread {
     @Override
     public void run() {
         IDCardFactoryDona2 s = IDCardFactoryDona2.getInstance();
+        System.out.println(getName());
         System.out.println(s);
     }
 
