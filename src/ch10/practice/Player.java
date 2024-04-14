@@ -7,7 +7,7 @@ public class Player {
     private int losecount;
     private int gamecount;
 
-    // 이름과 전략을 받아서 플레이어를 만든다 
+    // 생성자 (이름, 전략) 
     public Player(String name, Strategy strategy) {
         this.name = name;
         this.strategy = strategy;

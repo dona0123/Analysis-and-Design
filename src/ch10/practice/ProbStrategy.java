@@ -4,14 +4,15 @@ import java.util.Random;
 
 public class ProbStrategy implements Strategy {
     private Random random; // = null 로 자동 초기화 
-    private int prevHandValue; // = 0; 
-    private int currentHandValue = 0;
+    private int prevHandValue; // 지난번에 냈던 손 
+    private int currentHandValue = 0; // 이번에 냈던 손 
     private int[][] history = {
         { 1, 1, 1, },
         { 1, 1, 1, },
         { 1, 1, 1, },
     };
 
+    // 생성자 
     public ProbStrategy(int seed) {
         random = new Random(seed);
     }
@@ -42,11 +43,11 @@ public class ProbStrategy implements Strategy {
 
     @Override
     public void study(boolean win) {
-        if (win) { // 이겼으면 
-            history[prevHandValue][currentHandValue]++; // 해당 칸에 1을 더함 
-        } else { // 졌으면, 나머지 두 칸에 1을 더함 
-            history[prevHandValue][(currentHandValue + 1) % 3]++; 
-            history[prevHandValue][(currentHandValue + 2) % 3]++;
+        if (win) { // 이겼으면, 해당 칸에 1을 더함 
+            history[prevHandValue][currentHandValue]++; 
+        } else { // 졌으면, 나머지 두 칸에 1을 더함 (ex: 2) 
+            history[prevHandValue][(currentHandValue + 1) % 3]++; // (ex: 0)
+            history[prevHandValue][(currentHandValue + 2) % 3]++; // (ex: 1)
         }
     }
 }

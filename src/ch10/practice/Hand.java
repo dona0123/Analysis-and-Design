@@ -7,7 +7,7 @@ public enum Hand { // 클래스
     SCISSORS("가위", 1),
     PAPER("보", 2);
 
-    // enum이 가진 필드 
+    // enum이 가진 필드 (속성)
     private String name; // 가위 바위 보 손의 이름
     private int handvalue; // 가위 바위 보 손의 값 
 

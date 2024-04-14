@@ -14,6 +14,7 @@ public class WinningStrategy implements Strategy {
     @Override
     public Hand nextHand() {
         if (!won) {
+            // 직전 승부에서 패배했으면, 난수로 다음 손을 정함 
             prevHand = Hand.getHand(random.nextInt(3));
         }
         return prevHand;
