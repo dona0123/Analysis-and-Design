@@ -1,13 +1,18 @@
-package hw.ch10;
+package ch10;
 
 import java.util.*;
 
 class Main {
     public static void main(String[] args) {
         // Student 객체 5개 만들기 
+        Student s1 = new Student("최승훈", "1", 190);
+        Student s2 = new Student("편도나", "2", 180);
+        Student s3 = new Student("권나래", "3", 170);
+        Student s4 = new Student("남시윤", "4", 160);
+        Student s5 = new Student("장현지", "5", 150);
 
         // Student 리스트로 변환 
-        List<Student> list = Arrays.asList("D", "B", "C", "E", "A");
+        List<Student> list = Arrays.asList(s1, s2, s3, s4, s5);
 
         // 사전순으로 작은 순서
         // Comparator 인터페이스: compare 함수 1개만 선언되어 있음 
