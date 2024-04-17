@@ -7,6 +7,7 @@ public class Main {
         Entry f2 = new File("b.txt", 200);
         System.out.println(f1.getName());
         System.out.println(f1.getSize());
+        System.out.println("null printList 호출");
         f1.printList();
         f1.printList("c:/docs");
 
