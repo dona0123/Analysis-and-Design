@@ -2,7 +2,9 @@ package ch12.Sample;
 
 public class Main {
     public static void main(String[] args) {
+        // 중심 객체 
         Display b1 = new StringDisplay("Hello, world.");
+        // 장식자 객체 
         Display b2 = new SideBorder(b1, '#');
         Display b3 = new FullBorder(b2);
         b1.show();

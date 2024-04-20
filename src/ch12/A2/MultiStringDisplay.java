@@ -16,7 +16,7 @@ public class MultiStringDisplay extends Display {
             // 최대 문자 수 갱신
             columns = msg.length();
         }
-        updatePadding();
+        updatePadding(); // 더 짧은 문자열 빈칸 채우기 
     }
 
     @Override
@@ -34,12 +34,13 @@ public class MultiStringDisplay extends Display {
         return body.get(row);
     }
 
+    // 더 짧은 문자열 빈칸 채우기 
     // 표시 문자열 오른쪽 끝에 채울 공백을 필요에 따라 늘린다
     private void updatePadding() {
         for (int row = 0; row < body.size(); row++) {
-            String line = body.get(row);
-            int padding = columns - line.length();
-            if (padding > 0) {
+            String line = body.get(row); // 문자열 하나 얻음 
+            int padding = columns - line.length(); // 제일 긴 문자열 길이와 비교 
+            if (padding > 0) { // 현재 문자열이 더 짧으면 
                 body.set(row, line + spaces(padding));
             }
         }
