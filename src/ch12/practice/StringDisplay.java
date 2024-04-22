@@ -10,7 +10,7 @@ public class StringDisplay extends Display {
 
     @Override
     public int getColumns() {
-        return string.length();
+        return string.length(); // 열수는 문자열 길이 
     }
 
     @Override

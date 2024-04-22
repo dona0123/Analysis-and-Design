@@ -3,7 +3,7 @@ package ch12.practice;
 public class SideBorder extends Border {
     private char borderChar;  // 장식 문자
 
-    // 내용물이 될 Display와 장식 문자를 지정
+    // 생성자 : 내용물이 될 Display와 장식 문자를 지정
     public SideBorder(Display display, char ch) {
         super(display);
         this.borderChar = ch;

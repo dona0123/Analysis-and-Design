@@ -21,13 +21,15 @@ public class FullBorder extends Border {
     public String getRowText(int row) {
         if (row == 0) {                                             	// 상단 테두리
             return "+" + makeLine('-', display.getColumns()) + "+";
-        } else if (row == display.getRows() + 1) {                 	// 하단 테두리
+        } else if (row == display.getRows() + 1) {                 	    // 하단 테두리
             return "+" + makeLine('-', display.getColumns()) + "+";
-        } else {                                                    		// 기타
+        } else {                                     
+            // StringDisplay 클래스의 getRowText() 호출                  // 기타
             return "|" + display.getRowText(row - 1) + "|";
         }
     }
 
+    // StringBuilder : 문자열 다루는데 사용되는 클래스
     // 문자 ch로 count 수만큼 연속한 문자열을 만든다
     private String makeLine(char ch, int count) {
         StringBuilder line = new StringBuilder();

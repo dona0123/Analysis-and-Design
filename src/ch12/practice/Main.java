@@ -11,7 +11,7 @@ public class Main {
         Display sb2 = new SideBorder(sb1, '+'); 
         sb2.show();
 
-        Display fb1 = new FullBorder(sb2); 
+        Display fb1 = new FullBorder(sb2);  
         fb1.show();
 
         Display fb2 = new FullBorder(fb1); 
