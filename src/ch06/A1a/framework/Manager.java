@@ -12,6 +12,7 @@ public class Manager {
 
     public Product create(String prototypeName) {
         Product p = showcase.get(prototypeName);
+        
         return p.createCopy();
     }
 }

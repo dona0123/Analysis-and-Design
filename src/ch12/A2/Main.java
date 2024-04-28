@@ -12,7 +12,7 @@ public class Main {
         Display d1 = new SideBorder(md, '#');
         d1.show();
 
-        Display d2 = new FullBorder(md);
+        Display d2 = new FullBorder(d1);
         d2.show();
     }
 }
