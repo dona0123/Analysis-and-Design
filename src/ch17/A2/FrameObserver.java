@@ -20,11 +20,13 @@ public class FrameObserver extends Frame implements Observer, ActionListener {
         @Override
         public void update(NumberGenerator generator) {
             int number = generator.getNumber();
+
             String text = number + ":";
+
             for (int i = 0; i < number; i++) {
                 text += '*';
             }
-            setText(text);
+            this.setText(text);
         }
     }
 
@@ -34,15 +36,19 @@ public class FrameObserver extends Frame implements Observer, ActionListener {
 
         @Override
         public void update(NumberGenerator generator) {
-            number = generator.getNumber();
-            repaint();
+            number = generator.getNumber(); // 상태가 변화됨 
+            repaint(); // 그림 영역을 clear한 후, paint() 메소드를 자동으로 호출 
         }
 
         public void paint(Graphics g) {
-            int width = getWidth();
-            int height = getHeight();
+            int width = this.getWidth(); // 현재 도화지의 너비 
+            int height = this.getHeight();
+
+            // 흰색 부분 
             g.setColor(Color.white);
             g.fillArc(0, 0, width, height, 0, 360);
+
+            // 빨간색 부분
             g.setColor(Color.red);
             g.fillArc(0, 0, width, height, 90, - number * 360 / 50);
         }
