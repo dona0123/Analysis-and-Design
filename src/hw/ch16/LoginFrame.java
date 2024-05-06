@@ -7,6 +7,10 @@ import java.awt.GridLayout;
 import java.awt.Label;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
+
+import javax.swing.JOptionPane;
 
 public class LoginFrame extends Frame implements ActionListener, Mediator {
     private ColleagueCheckbox checkGuest;
@@ -50,6 +54,30 @@ public class LoginFrame extends Frame implements ActionListener, Mediator {
         // 활성/비활성 초기 설정을 한다
         colleagueChanged();
 
+        // textNumber에 KeyListener 추가
+        // 주민번호 입력 조건
+        textNumber.addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyTyped(KeyEvent e) {
+                char c = e.getKeyChar();
+
+                if (!Character.isDigit(c)) { // 숫자 이외의 문자를 입력하면
+                    // 경고창 띄우기
+                    JOptionPane.showMessageDialog(null, "숫자를 입력하세요.", "경고", JOptionPane.WARNING_MESSAGE);
+
+                    // 입력한 문자 삭제
+                    String text = textNumber.getText();
+                    int caretPosition = textNumber.getCaretPosition();
+                    if (caretPosition > 0) {
+                        text = text.substring(0, caretPosition);
+                        textNumber.setText(text);
+                        textNumber.setCaretPosition(caretPosition); // 삭제된 문자 이전 위치로 캐럿 이동
+                    }
+                    e.consume(); // 입력한 문자 소비하여 삭제
+                }
+            }
+        });
+
         // 표시한다
         pack();
         setVisible(true);
@@ -80,6 +108,7 @@ public class LoginFrame extends Frame implements ActionListener, Mediator {
         checkMember.setMediator(this);
         textUser.setMediator(this);
         textPass.setMediator(this);
+        textNumber.setMediator(this);
         buttonOk.setMediator(this);
         buttonCancel.setMediator(this);
 
@@ -89,6 +118,7 @@ public class LoginFrame extends Frame implements ActionListener, Mediator {
         checkMember.addItemListener(checkMember);
         textUser.addTextListener(textUser);
         textPass.addTextListener(textPass);
+        textNumber.addTextListener(textNumber);
         buttonOk.addActionListener(this);
         buttonCancel.addActionListener(this);
     }
@@ -115,7 +145,7 @@ public class LoginFrame extends Frame implements ActionListener, Mediator {
     // 각 Colleage의 활성/비활성을 판정한다
     private void memberChanged() {
         if (textUser.getText().length() > 0) { // 사용자 이름이 입력되었다면
-            { 
+            {
                 textPass.setColleagueEnabled(true);
             }
             if (textPass.getText().length() > 0) { // 비밀번호가 입력되었다면
@@ -129,6 +159,7 @@ public class LoginFrame extends Frame implements ActionListener, Mediator {
             textNumber.setColleagueEnabled(false);
             buttonOk.setColleagueEnabled(false);
         }
+
     }
 
     // textUser 또는 textPass의 변경이 있다
