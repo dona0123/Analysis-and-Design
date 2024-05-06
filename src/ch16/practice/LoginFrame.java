@@ -83,8 +83,8 @@ public class LoginFrame extends Frame implements ActionListener, Mediator {
 
     // Colleage의 상태가 바뀌면 호출된다
     @Override
-    public void colleagueChanged() {
-        if (checkGuest.getState()) {
+    public void colleagueChanged() { 
+        if (checkGuest.getState()) { // Guest 체크박스가 선택되었다면
             // 게스트 로그인 
             textUser.setColleagueEnabled(false);
             textPass.setColleagueEnabled(false);
@@ -99,14 +99,14 @@ public class LoginFrame extends Frame implements ActionListener, Mediator {
     // textUser 또는 textPass의 변경이 있다 
     // 각 Colleage의 활성/비활성을 판정한다
     private void userpassChanged() {
-        if (textUser.getText().length() > 0) {
+        if (textUser.getText().length() >= 4) { // 사용자 이름이 4개 이상 입력되었다면 
             textPass.setColleagueEnabled(true);
-            if (textPass.getText().length() > 0) {
+            if (textPass.getText().length() >= 4) { // 비밀번호가 4개 이상 입력되었다면 
                 buttonOk.setColleagueEnabled(true);
-            } else {
+            } else { // 비밀번호가 비워져 있다면 
                 buttonOk.setColleagueEnabled(false);
             }
-        } else {
+        } else { // 사용자 이름이 비워져 있으면 
             textPass.setColleagueEnabled(false);
             buttonOk.setColleagueEnabled(false);
         }
@@ -115,6 +115,6 @@ public class LoginFrame extends Frame implements ActionListener, Mediator {
     @Override
     public void actionPerformed(ActionEvent e) {
         System.out.println(e.toString());
-        System.exit(0);
+        System.exit(0); // 정상 종료 
     }
 }
