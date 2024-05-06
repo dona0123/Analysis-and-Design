@@ -42,7 +42,7 @@ public class FrameObserver extends Frame implements Observer, ActionListener {
 
         public void paint(Graphics g) {
             int width = this.getWidth(); // 현재 도화지의 너비 
-            int height = this.getHeight();
+            int height = this.getHeight(); // 현재 도화지의 높이 
 
             // 흰색 부분 
             g.setColor(Color.white);
@@ -60,14 +60,19 @@ public class FrameObserver extends Frame implements Observer, ActionListener {
 
     public FrameObserver() {
         super("FrameObserver");
+
         setLayout(new BorderLayout());
+
         setBackground(Color.lightGray);
         textGraph.setEditable(false);
         canvasGraph.setSize(500, 500);
+
         add(textGraph, BorderLayout.NORTH);
         add(canvasGraph, BorderLayout.CENTER);
         add(buttonClose, BorderLayout.SOUTH);
+
         buttonClose.addActionListener(this);
+        
         pack();
         setVisible(true);
     }
