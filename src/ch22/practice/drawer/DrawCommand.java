@@ -1,6 +1,6 @@
 package ch22.practice.drawer;
 
-import ch22.Sample.command.Command;
+import ch22.practice.command.Command;
 import java.awt.Point;
 
 public class DrawCommand implements Command {

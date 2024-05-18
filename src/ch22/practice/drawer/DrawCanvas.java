@@ -1,6 +1,6 @@
 package ch22.practice.drawer;
 
-import ch22.Sample.command.MacroCommand;
+import ch22.practice.command.MacroCommand;
 
 import java.awt.Canvas;
 import java.awt.Color;
