@@ -6,6 +6,8 @@ import java.util.Deque;
 public class MacroCommand implements Command {
     // 명령의 배열 
     private Deque<Command> commands = new ArrayDeque<>();
+    // 삭제했던 명령어들을 보관
+    private Deque<Command> commandsForRedo = new ArrayDeque<>();
 
     // 실행 
     @Override
@@ -26,7 +28,14 @@ public class MacroCommand implements Command {
     // 마지막 명령을 삭제
     public void undo() {
         if (!commands.isEmpty()) {
-            commands.pop();
+            commandsForRedo.push(commands.pop()); 
+        }
+    }
+
+    // 삭제된 명령어 복구 
+    public void redo() {
+        if (!commandsForRedo.isEmpty()) {
+            commands.push(commandsForRedo.pop());
         }
     }
 

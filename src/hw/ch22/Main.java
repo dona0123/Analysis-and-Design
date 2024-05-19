@@ -56,7 +56,8 @@ public class Main extends JFrame implements MouseMotionListener, WindowListener 
             canvas.repaint();
         });
         redoButton.addActionListener(e->{
-            
+            history.redo();
+            canvas.repaint();
         });
 
         Box buttonBox = new Box(BoxLayout.X_AXIS);
@@ -118,6 +119,6 @@ public class Main extends JFrame implements MouseMotionListener, WindowListener 
     }
 
     public static void main(String[] args) {
-        new Main("Command Pattern Sample");
+        new Main("편도나: Command Pattern Sample");
     }
 }
