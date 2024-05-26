@@ -13,7 +13,8 @@ public class MacroCommand implements Command {
     // 실행 
     @Override
     public void execute() {
-        Iterator<Command> iterator = commands.descendingIterator();
+        // 역순 반복자 얻기 
+        Iterator<Command> iterator = commands.descendingIterator(); 
         while (iterator.hasNext()) {
             Command cmd = iterator.next();
             cmd.execute();
