@@ -37,8 +37,11 @@ public class Main extends JFrame implements MouseMotionListener, WindowListener 
             canvas.repaint();
         });
         redButton.addActionListener(e -> {
+            // ColorCommand 객체 생성해서 히스토리에 추가 
             Command cmd = new ColorCommand(canvas, Color.red);
             history.append(cmd);
+
+            // ColorCommand 실행 (붓의 색깔 변경)
             cmd.execute();
         });
         greenButton.addActionListener(e -> {
@@ -52,8 +55,8 @@ public class Main extends JFrame implements MouseMotionListener, WindowListener 
             cmd.execute();
         });
         undoButton.addActionListener(e -> {
-            history.undo();
-            canvas.repaint();
+            history.undo(); // 히스토리에서 맨 위 커맨드 객체를 제거 
+            canvas.repaint(); // 다시 그림 
         });
         redoButton.addActionListener(e->{
             history.redo();

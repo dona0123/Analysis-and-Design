@@ -44,6 +44,7 @@ public class DrawCanvas extends Canvas implements Drawable {
         g.fillOval(x - radius, y - radius, radius * 2, radius * 2);
     }
 
+    // 색깔 지정 메소드 
     @Override
     public void setColor(Color color) {
         this.color = color;
