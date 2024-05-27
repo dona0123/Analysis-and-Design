@@ -1,17 +1,11 @@
 package ch07;
 
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.Writer;
-
 public class XMLBuilder extends Builder {
 
-    private String filename = "untitled.xml";
     private StringBuilder sb = new StringBuilder();
 
     @Override
     public void makeTitle(String title) {
-        filename = title + ".xml";
         sb.append("<document>\n\n<title>"); 
         sb.append(title);
         sb.append("</title>\n");
