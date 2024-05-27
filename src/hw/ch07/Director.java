@@ -1,4 +1,4 @@
-package ch07.practice;
+package ch07;
 
 public class Director {
     // 지시할 Builder

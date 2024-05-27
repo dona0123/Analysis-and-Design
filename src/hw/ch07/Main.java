@@ -1,4 +1,4 @@
-package ch07.practice;
+package ch07;
 
 import java.io.IOException;
 import java.nio.file.Files;

@@ -10,12 +10,14 @@ public class Main {
             usage();
             System.exit(0);
         }
+        // 명령어 첫번째 인자가 text이면, 
         if (args[0].equals("text")) {
             TextBuilder textbuilder = new TextBuilder();
             Director director = new Director(textbuilder);
             director.construct();
             String result = textbuilder.getTextResult();
             System.out.println(result);
+            // 명령어 첫번째 인자가 html이면,
         } else if (args[0].equals("html")) {
             HTMLBuilder htmlbuilder = new HTMLBuilder();
             Director director = new Director(htmlbuilder);

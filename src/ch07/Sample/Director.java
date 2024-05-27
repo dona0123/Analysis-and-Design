@@ -5,6 +5,7 @@ public class Director {
 
     // 생성자 
     public Director(Builder builder) {
+        // 의존할(사용할) 객체를 외부에서 주입하는 게 좋음 -> 의존성 주입 
         this.builder = builder;
     }
 

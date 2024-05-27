@@ -1,4 +1,4 @@
-package ch07.practice;
+package ch07;
 
 public class TextBuilder extends Builder {
     private StringBuilder sb = new StringBuilder();
