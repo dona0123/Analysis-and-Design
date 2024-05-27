@@ -6,7 +6,7 @@ import javax.swing.*;
 
 public class FrameBuilder extends Builder {
     private JFrame frame = new JFrame();
-    private Box box = new Box(BoxLayout.Y_AXIS);
+    private Box box = new Box(BoxLayout.Y_AXIS); // 세로로 배치 
 
     @Override
     public void makeTitle(String title) {
@@ -16,7 +16,7 @@ public class FrameBuilder extends Builder {
     @Override
     public void makeString(String str) {
         JLabel label = new JLabel(str);
-        label.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
+        label.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10)); // 경계선 지정 
         box.add(label);
     }
 
