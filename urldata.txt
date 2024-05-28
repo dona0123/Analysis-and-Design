@@ -1,0 +1,3 @@
+duksung=https://www.duksung.ac.kr
+naver=https://www.naver.com
+google=https://www.google.com
