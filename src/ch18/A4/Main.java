@@ -6,17 +6,17 @@ import ch18.A4.game.Gamer;
 import java.io.*;
 
 public class Main {
-    public static final String SAVEFILENAME = "game.dat";
+    public static final String SAVEFILENAME = "game.dat"; // 상수 
 
     public static void main(String[] args) {
         Gamer gamer = new Gamer(100);         // 최초 소지금은 100
 
         // 파일에서 읽어온다
         Memento memento = Memento.loadFromFile(SAVEFILENAME);
-        if (memento == null) {
+        if (memento == null) { // 읽기 실패했으면 
             System.out.println("새로 시작합니다.");
             memento = gamer.createMemento();  // 최초 상태를 저장해 둔다
-        } else {
+        } else { // 잘 읽었으면 
             System.out.println("이전에 저장한 결과부터 시작합니다.");
             gamer.restoreMemento(memento);
         }

@@ -62,13 +62,13 @@ public class Memento {
         try {
             // 읽기
             List<String> lines = Files.readAllLines(Path.of(filename));
-            if (lines.size() == 0) {
+            if (lines.size() == 0) { // 파일의 내용이 없으면 
                 System.out.println("Empty file");
                 return null;
             }
 
             // 소지금
-            int money = 0;
+            int money = 0; // 첫번째 줄 (소지금)
             try {
                 money = Integer.parseInt(lines.get(0));
             } catch (NumberFormatException e) {
@@ -81,7 +81,7 @@ public class Memento {
 
             // 과일
             for (int i = 1; i < lines.size(); i++) {
-                memento.addFruit(lines.get(i));
+                memento.addFruit(lines.get(i)); // 과일 
             }
             return memento;
         } catch (IOException e) {
