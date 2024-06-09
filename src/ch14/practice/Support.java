@@ -20,7 +20,7 @@ public abstract class Support {
         if (resolve(trouble)) {
             done(trouble);
         } else if (next != null) { // 내가 해결 못하고, 뒷사람이 있으면 
-            next.support(trouble); // 뒷사람한테 넘긴다 
+            next.support(trouble); // 뒷사람한테 넘긴다 (재귀적 호출)
         } else { // 뒷사람이 없으면 (내가 사슬의 마지막이면)
             fail(trouble); // 해결 실패 
         }

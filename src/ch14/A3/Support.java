@@ -17,11 +17,11 @@ public abstract class Support {
 
     // 트러블 해결 절차를 결정한다 
     public void support(Trouble trouble) {
-        for (Support obj = this; true; obj = obj.next) {
-            if (obj.resolve(trouble)) {
+        for (Support obj = this; true; obj = obj.next) { // 무한 루프 
+            if (obj.resolve(trouble)) { // 내가 해결하면 
                 obj.done(trouble);
                 break;
-            } else if (obj.next == null) {
+            } else if (obj.next == null) { // 뒷사람이 없으면 
                 obj.fail(trouble);
                 break;
             }
