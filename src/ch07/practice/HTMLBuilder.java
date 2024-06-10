@@ -43,6 +43,7 @@ public class HTMLBuilder extends Builder {
         sb.append("</body>");
         sb.append("</html>\n");
         try {
+            // 파일에 쓰기 
             Writer writer = new FileWriter(filename);
             writer.write(sb.toString());
             writer.close();

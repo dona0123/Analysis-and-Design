@@ -2,7 +2,7 @@ package ch14.practice;
 
 public abstract class Support {
     private String name;    // 이 트러블 해결자 이름
-    private Support next;   // 떠넘길 곳 (부모 타입으로 선언됨)
+    private Support next;   // 뒤로 떠넘길 곳 (부모 타입으로 선언됨)
 
     public Support(String name) {
         this.name = name;

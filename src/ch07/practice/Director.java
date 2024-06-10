@@ -26,6 +26,7 @@ public class Director {
 
         // 문자열
         builder.makeString("시간대별 인사");
+        
         // 항목 
         builder.makeItems(new String[]{
             "Good morning.",
