@@ -13,6 +13,8 @@ public class PageMaker {
         try {
             // 프로퍼티 파일로부터 사용자 이름 얻음
             Properties mailprop = Database.getProperties("maildata");
+
+            // 키에 해당하는 값 반환
             String username = mailprop.getProperty(mailaddr);
 
             // 웰컴 페이지의 내용을 완성
@@ -43,7 +45,8 @@ public class PageMaker {
 
             writer.title(filename);
 
-            Set<String> mailAddresses = mailprop.stringPropertyNames();
+            // 중복된 요소를 허용하지 않는 컬렉션
+            Set<String> mailAddresses = mailprop.stringPropertyNames(); // 속성 파일에 저장된 모든 키를 Set<String> 형태로 반환
 
             for (String mailAddress : mailAddresses) {
                 // 메일 주소 하나당 하나의 링크 생성 (이메일 주소, 사용자 이름)
